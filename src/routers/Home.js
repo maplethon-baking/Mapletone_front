@@ -1,17 +1,13 @@
 import styled from "styled-components";
-import { Navbar } from "../components/Navbar";
 
 const Container = styled.div`
   padding: 0px 20px;
+  padding-top: 49px;
   max-width: 480px;
   margin: 0 auto;
+  overflow-y: scroll;
 `;
 
-export default function Home() {
-  return (
-    <>
-      <Container>home</Container>
-      <Navbar />
-    </>
-  );
+export function Home() {
+  return <Container>home</Container>;
 }

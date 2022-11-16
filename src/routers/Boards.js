@@ -1,9 +1,7 @@
-import { Navbar } from "../components/Navbar";
-
-export default function Boards() {
+export function Boards() {
   return (
     <>
-      <Navbar />
+      <div>boards</div>
     </>
   );
 }

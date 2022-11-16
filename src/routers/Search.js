@@ -1,6 +1,6 @@
 import { Navbar } from "../components/Navbar";
 
-export default function Search() {
+export function Search() {
   return (
     <>
       <Navbar />

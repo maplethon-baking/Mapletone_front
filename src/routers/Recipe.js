@@ -1,3 +1,3 @@
-export default function Recipe() {
+export function Recipe() {
   return <></>;
 }

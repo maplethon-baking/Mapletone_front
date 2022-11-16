@@ -15,7 +15,7 @@ const Nav = styled.nav`
   max-width: 480px;
   margin: 0 auto;
   background-color: #c0c0c0;
-  padding: 0 10%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +26,7 @@ const Item = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10%;
 `;
 
 const Icon = styled.img`
