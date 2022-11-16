@@ -63,7 +63,8 @@ body {
   font-family:'Source Sans Pro', sans-serif ;
   background-color: white;
   line-height: 1.2;
-
+  max-width: 480px;
+  margin: 0 auto;
 }
 a {
   text-decoration:none;
