@@ -3,3 +3,8 @@ export function getContents() {
     response.json()
   );
 }
+export function getRecipes() {
+  return fetch("http://localhost:4000/recipes").then((response) =>
+    response.json()
+  );
+}
