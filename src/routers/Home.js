@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { getContents } from "../api";
 import { Content } from "../components/\bContent";
 
-const Container = styled.div`
+export const Container = styled.div`
   padding: 0px 20px;
   padding-top: 49px;
   max-width: 480px;
@@ -16,7 +16,7 @@ const Container = styled.div`
   background-color: #f1f1f1;
 `;
 
-const Contents = styled.div`
+export const Contents = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
