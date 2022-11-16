@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -60,9 +61,10 @@ table {
 }
 body {
   font-family:'Source Sans Pro', sans-serif ;
-color: white;
-  background-color: black;
+
+  background-color: white;
   line-height: 1.2;
+
 }
 a {
   text-decoration:none;
@@ -76,7 +78,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <RecoilRoot>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <App />
       </ThemeProvider>
