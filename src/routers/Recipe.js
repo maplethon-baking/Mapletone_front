@@ -11,18 +11,19 @@ const CreateButton = styled.img`
   margin-bottom: 100px;
 `
 const SpeechBubble = styled.img`
+  /* position: relative; */
   width: 220px;
 `
 const SpeechDiv = styled.div`
   margin-top: 30px;
-
+  vertical-align: middle;
   margin-bottom: 10px;
 `
 const SpeechText = styled.span`
   position: absolute;
-  left: 170px;
-  bottom: -252px;
-  color: white;
+  text-align: center;
+  transform: translate(6%, 50%);
+  color: white; 
 `
 const Container = styled.div`
   padding: 0px 20px;
