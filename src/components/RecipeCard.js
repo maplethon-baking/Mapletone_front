@@ -1,4 +1,4 @@
 import styled from "styled-components";
-export function Recipes({recipe}){
+export function RecipeCard({recipe}){
     return <div>{recipe.type}</div>;
 }
