@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RecoilRoot } from "recoil";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "./theme";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -65,6 +66,9 @@ body {
   line-height: 1.2;
   max-width: 480px;
   margin: 0 auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 a {
   text-decoration:none;
@@ -81,6 +85,7 @@ root.render(
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <App />
+        <ReactQueryDevtools initialIsOpen={false} />
       </ThemeProvider>
     </QueryClientProvider>
   </RecoilRoot>

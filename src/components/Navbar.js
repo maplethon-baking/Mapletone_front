@@ -8,6 +8,7 @@ import Po from "../assets/photo_outline.svg";
 import Ps from "../assets/photo_solid.svg";
 
 const Nav = styled.nav`
+  z-index: 99;
   position: fixed;
   bottom: 0;
   height: 49px;

@@ -25,6 +25,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "data": "json-server --watch data.json --port 4000",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
