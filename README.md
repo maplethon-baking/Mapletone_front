@@ -4,5 +4,3 @@
 /recipe?food=cake&taste=choco& ....  
 /boards -> 게시글 페이지  
 /write -> 게시글 쓰기
-
-/test
