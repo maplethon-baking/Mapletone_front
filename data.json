@@ -71,6 +71,20 @@
       "type":"쿠키",
       "taste":"초코",
       "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
+    },
+    {
+      "id" : 2,
+      "img":"https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "type":"쿠키",
+      "taste":"초코",
+      "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
+    },
+    {
+      "id" : 3,
+      "img":"https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "type":"쿠키",
+      "taste":"초코",
+      "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
     }
   ]
 }
