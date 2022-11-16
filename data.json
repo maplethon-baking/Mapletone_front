@@ -56,5 +56,14 @@
       "topic": "초코칩쿠키",
       "comments": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"
     }
+  ],
+  "recipes" : [
+    {
+      "id" : 0,
+      "img":"https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "type":"쿠키",
+      "taste":"당근",
+      "recipe":["밀가루(중력분)","초코칩"]
+    }
   ]
 }
