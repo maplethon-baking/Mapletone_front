@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 300px;
-  height: 420px;
+  width: 98%;
+  height: 350px;
   margin: 20px auto;
   border-radius: 10px;
-  background-color: #c0c0c0;
+  background-color: ${(props) => props.theme.content};
+  box-shadow: 0px 4px 9px -4px rgba(0, 0, 0, 0.69);
 `;
 
 const Image = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 67%;
+  object-fit: cover;
 `;
 
 const InfoBox = styled.div`

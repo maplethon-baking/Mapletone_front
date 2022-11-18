@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
 import { getContents } from "../api";
-import { Content } from "../components/\bContent";
+import { Content } from "../components/Content";
 
 export const Container = styled.div`
   padding: 0px 20px;
@@ -12,8 +12,6 @@ export const Container = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-
-  background-color: #f1f1f1;
 `;
 
 export const Contents = styled.div`

@@ -57,34 +57,34 @@
       "comments": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"
     }
   ],
-  "recipes" : [
+  "recipes": [
     {
-      "id" : 0,
-      "img":"https://pixabay.com/get/g5e044fa56fb79f88de3e978f7da777067234dbf25df3a1c96e168a0c2159cf0752571ec8cb7a665f56d403f0ef1e31b11b7d96e14f1ccd8024223c72e21848c006c5e1aae6134f9949882dc39cb652f2_1920.jpg",
-      "type":"쿠키",
-      "taste":"당근",
-      "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
+      "id": 0,
+      "img": "https://pixabay.com/get/g5e044fa56fb79f88de3e978f7da777067234dbf25df3a1c96e168a0c2159cf0752571ec8cb7a665f56d403f0ef1e31b11b7d96e14f1ccd8024223c72e21848c006c5e1aae6134f9949882dc39cb652f2_1920.jpg",
+      "type": "쿠키",
+      "taste": "당근",
+      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
     },
     {
-      "id" : 1,
-      "img":"https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
-      "type":"쿠키",
-      "taste":"초코",
-      "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
+      "id": 1,
+      "img": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "type": "쿠키",
+      "taste": "초코",
+      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
     },
     {
-      "id" : 2,
-      "img":"https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
-      "type":"쿠키",
-      "taste":"초코",
-      "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
+      "id": 2,
+      "img": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "type": "쿠키",
+      "taste": "초코",
+      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
     },
     {
-      "id" : 3,
-      "img":"https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
-      "type":"쿠키",
-      "taste":"초코",
-      "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
+      "id": 3,
+      "img": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "type": "쿠키",
+      "taste": "초코",
+      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
     }
   ]
 }

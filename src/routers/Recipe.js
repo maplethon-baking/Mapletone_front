@@ -1,30 +1,30 @@
 import { useQuery } from "@tanstack/react-query";
 import { getRecipes } from "../api";
-import { RecipeCard } from '../components/RecipeCard'
+import { RecipeCard } from "../components/RecipeCard";
 import { Contents } from "./Home";
-import create_button from '../assets/create_button.png';
-import speech_bubble from '../assets/speech_bubble.png';
+import create_button from "../assets/create_button.png";
+import speech_bubble from "../assets/speech_bubble.png";
 import styled from "styled-components";
 
-const CreateButton = styled.img`
+export const CreateButton = styled.img`
   width: 50px;
   margin-bottom: 100px;
-`
-const SpeechBubble = styled.img`
+`;
+export const SpeechBubble = styled.img`
   /* position: relative; */
   width: 220px;
-`
-const SpeechDiv = styled.div`
+`;
+export const SpeechDiv = styled.div`
   margin-top: 30px;
   vertical-align: middle;
   margin-bottom: 10px;
-`
-const SpeechText = styled.span`
+`;
+export const SpeechText = styled.span`
   position: absolute;
   text-align: center;
   transform: translate(6%, 50%);
-  color: white; 
-`
+  color: white;
+`;
 const Container = styled.div`
   padding: 0px 20px;
   padding-top: 49px;
@@ -43,7 +43,9 @@ export function Recipe() {
     <Container>
       <Contents>
         {data &&
-          data.map((recipes) => <RecipeCard recipes={recipes} key={recipes.id} />)}
+          data.map((recipes) => (
+            <RecipeCard recipes={recipes} key={recipes.id} />
+          ))}
         <SpeechDiv>
           <SpeechText>나만의 레시피를 만들어보세요!</SpeechText>
           <SpeechBubble src={speech_bubble} />

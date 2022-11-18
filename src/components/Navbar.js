@@ -11,12 +11,12 @@ const Nav = styled.nav`
   z-index: 99;
   position: fixed;
   bottom: 0;
-  height: 49px;
+  height: 60px;
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  background-color: #c0c0c0;
-
+  background-color: ${(props) => props.theme.nav};
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
