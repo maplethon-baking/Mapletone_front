@@ -25,7 +25,8 @@ export const Contents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 90px;
+  padding: 110px 0;
+  gap: 20px;
 `;
 
 const CategoryDiv = styled.div`
@@ -42,7 +43,7 @@ const CategoryDiv = styled.div`
 
 const CategoryBar = styled.div`
   border-radius: 10px;
-  width: 98%;
+  width: 100%;
   height: 65px;
   display: flex;
   justify-content: space-between;

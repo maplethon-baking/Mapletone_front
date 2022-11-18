@@ -12,8 +12,10 @@ function App() {
       <Routes>
         <Route path="/boards" element={<Boards />} />
         <Route path="/recipe" element={<Recipe />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />}>
+          <Route path="/search/:id" element={<Home />} />
+        </Route>
+        <Route path="/" element={<Home />}></Route>
       </Routes>
     </BrowserRouter>
   );
