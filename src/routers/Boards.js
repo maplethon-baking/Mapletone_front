@@ -4,9 +4,13 @@ import { getContents } from "../api";
 import create_button from "../assets/create_button.png";
 import speech_bubble from "../assets/speech_bubble.png";
 
-import { CreateButton, SpeechBubble, SpeechDiv, SpeechText } from "./Recipe";
+import { SpeechDiv, SpeechText } from "./Recipe";
 
-const Bubble = styled(SpeechBubble)`
+const CreateButton = styled.img`
+  width: 50px;
+  margin-bottom: 100px;
+`;
+const Bubble = styled.img`
   width: 240px;
 `;
 

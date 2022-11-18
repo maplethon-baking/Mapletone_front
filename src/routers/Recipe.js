@@ -36,20 +36,23 @@ export function Recipe() {
   const [createCheck, setCreateCheck] = useState(false);
   return (
     <>
-      {
-        createCheck ? (<RecipeCreate />) : (
-          <Container>
-            <Contents>
-              {data && data.map((recipes) => <RecipeCard recipes={recipes} key={recipes.id} />)}
-              <SpeechDiv>
-                <SpeechText>나만의 레시피를 만들어보세요!</SpeechText>
-                <SpeechBubble src={speech_bubble} />
-              </SpeechDiv>
-              <CreateButton src={create_button} onClick={onCreateCheck} />
-            </Contents>
-          </Container>
-        )
-      }
+      {createCheck ? (
+        <RecipeCreate />
+      ) : (
+        <Container>
+          <Contents>
+            {data &&
+              data.map((recipes) => (
+                <RecipeCard recipes={recipes} key={recipes.id} />
+              ))}
+            <SpeechDiv>
+              <SpeechText>나만의 레시피를 만들어보세요!</SpeechText>
+              <SpeechBubble src={speech_bubble} />
+            </SpeechDiv>
+            <CreateButton src={create_button} onClick={onCreateCheck} />
+          </Contents>
+        </Container>
+      )}
     </>
   );
 }
