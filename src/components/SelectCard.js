@@ -18,7 +18,10 @@ const Card = styled.button`
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
      transition: all ease 0.7s 0s;
     }
-    background-color: ${props => props.color};
+    background-color: gray;
+    &.active {
+        background-color: #BBBBBB;
+    }
 `;
 const ButtonDiv = styled.div`
     display: flex;
@@ -73,7 +76,7 @@ export function SelectCard({ count, setCount, num, setNum }) {
     const [taste, setTaste] = useState([]);
     const [topping, setTopping] = useState(new Set([]));
     const [test, setTest] = useState([]);
-    const [color,setColor] = useState("gray");
+    const [color,setColor] = useState(null);
     const next = () => {
         if (num < 3) {
             setCount(count += 35);
@@ -92,7 +95,9 @@ export function SelectCard({ count, setCount, num, setNum }) {
     };
     const currentProgress = (e) => {
         const type = e.target.value;
-        color === "gray" ? setColor("gray") : setColor("#BBBBBB");
+        const index = e.target.id;
+        setColor(index);
+        //color === "gray" ? setColor("gray") : setColor("#BBBBBB");
         if (num === 1) {
             setCurrent([type]);
         }
@@ -106,17 +111,19 @@ export function SelectCard({ count, setCount, num, setNum }) {
     };
     const selectPage = () => {
         if (num === 1) {
-            return SELECT[num]["type"].map((text) => {
-                return <Card color={color} onClick={currentProgress} value={text} key={text.id}>{text}</Card>;
+            return SELECT[num]["type"].map((text,index) => {
+                return <Card className={ index ==  color ? " active": ""} onClick={(e)=>{currentProgress(e)}} value={text} id={index}>{text}</Card>;
             });
         }
         else {
-            return SELECT[num][`${current}`].map((text) => {
-                return <Card color={color} onClick={currentProgress} value={text} key={text.id}>{text}</Card>;
+            return SELECT[num][`${current}`].map((text,index) => {
+                return <Card className={ index ==  color ? " active": ""} color={color} onClick={(e)=>{currentProgress(e)}} value={text} id={index}>{text}</Card>;
             });
         }
     };
-    console.log((test));
+    useEffect(()=>{
+        setColor(null);
+    },[num])
     return (
         <>
             {
