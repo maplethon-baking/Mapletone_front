@@ -4,8 +4,6 @@ import { getContents } from "../api";
 import create_button from "../assets/create_button.png";
 import speech_bubble from "../assets/speech_bubble.png";
 
-import { SpeechDiv, SpeechText } from "./Recipe";
-
 const CreateButton = styled.img`
   width: 50px;
   margin-bottom: 100px;
@@ -17,6 +15,17 @@ const Bubble = styled.img`
 const Container = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+const SpeechDiv = styled.div`
+  margin-top: 30px;
+  margin-bottom: 10px;
+`;
+const SpeechText = styled.span`
+  position: absolute;
+  text-align: center;
+  transform: translate(6%, 50%);
+  color: white;
 `;
 
 const Contents = styled.div`

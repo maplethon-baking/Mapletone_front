@@ -10,17 +10,18 @@ const Contents = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: minmax(100px, auto);
-
-  column-gap: 20px;
-  row-gap: 20px;
+  gap: 10px;
 `;
 
 const Content = styled.div`
+  min-width: 100px;
   background-color: black;
   :nth-child(2) {
     grid-column: 2/4;
     grid-row: 1/3;
   }
+  border-radius: 10px;
+  overflow: hidden;
 `;
 
 const ContentImg = styled.img`
@@ -38,7 +39,7 @@ export function Search() {
         {data &&
           data.map((content) => (
             <Content key={content.id}>
-              <ContentImg src={content.img} />
+              <ContentImg src={content.picture} />
             </Content>
           ))}
       </Contents>
