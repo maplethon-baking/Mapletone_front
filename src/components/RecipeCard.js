@@ -3,12 +3,14 @@ const RecipeContainer = styled.div`
     display: grid;
     margin: 10px auto;
     grid-template-columns: 180px 220px;
+    box-shadow: 0px 4px 9px -4px rgba(0, 0, 0, 0.69);
+    border-radius: 10px;
 `;
 
 const RecipeDiv = styled.div`
     width: 220px;
-    height: 200px;
-    background-color: #c0c0c0;
+    height: 180px;
+    background-color: #FEF7F2;
     border-top-right-radius : 10px;
     border-bottom-right-radius : 10px;
     overflow-y: scroll;
@@ -19,7 +21,7 @@ const RecipeDiv = styled.div`
 
 const RecipeImg = styled.img`
     width: 180px;
-    height: 200px;
+    height: 180px;
     border-top-left-radius : 10px;
     border-bottom-left-radius : 10px;
 
