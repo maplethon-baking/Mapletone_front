@@ -7,6 +7,7 @@ const Container = styled.div`
   border-radius: 10px;
   background-color: ${(props) => props.theme.content};
   box-shadow: 0px 4px 9px -4px rgba(0, 0, 0, 0.69);
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -16,7 +17,7 @@ const Image = styled.img`
 `;
 
 const InfoBox = styled.div`
-  width: 300px;
+  width: 100%;
   height: 120px;
   display: flex;
   flex-direction: column;
@@ -46,6 +47,7 @@ const LikeCounts = styled.span`
 `;
 
 const Text = styled.div`
+  width: 100%;
   height: 90px;
   display: flex;
   flex-direction: column;
@@ -53,7 +55,7 @@ const Text = styled.div`
 
 const Topic = styled.span`
   padding: 0 15px;
-  width: 300px;
+  width: 100%;
   height: 20px;
   font-size: 14px;
   font-weight: 600;
@@ -67,7 +69,7 @@ const Comment = styled.span`
 export function Content({ content }) {
   return (
     <Container>
-      <Image src={content.img} />
+      <Image src={content.picture} />
       <InfoBox>
         <Like>
           <LikeIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -76,8 +78,8 @@ export function Content({ content }) {
           <LikeCounts>{content.likeCounts}</LikeCounts>
         </Like>
         <Text>
-          <Topic>{content.topic}</Topic>
-          <Comment>{content.comments}</Comment>
+          <Topic>{content.title}</Topic>
+          <Comment>{content.content}</Comment>
         </Text>
       </InfoBox>
     </Container>

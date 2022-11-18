@@ -1,7 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { getContents } from "../api";
+import { categoryState, contentState } from "../atom";
 import { Content } from "../components/Content";
+import timeSort from "../assets/time_sort.png";
+import likeSort from "../assets/like_sort.png";
 
 export const Container = styled.div`
   padding: 0px 20px;
@@ -15,20 +20,117 @@ export const Container = styled.div`
 `;
 
 export const Contents = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+`;
+
+const CategoryDiv = styled.div`
+  position: fixed;
+  width: 100%;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f0e6;
+  z-index: 10;
+`;
+
+const CategoryBar = styled.div`
+  border-radius: 10px;
+  width: 98%;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${(props) => props.theme.menubar};
+`;
+
+const Categories = styled.div`
+  width: 72%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const Category = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const CategoryBtn = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid ${(props) => props.theme.menutext};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CategoryName = styled.span`
+  height: 11px;
+  font-size: 5px;
+  text-align: center;
+  padding-top: 2px;
+  color: ${(props) => props.theme.menutext};
+`;
+
+const Sort = styled.div`
+  height: 24px;
+  width: 28%;
+  border-left: 2px solid ${(props) => props.theme.menutext};
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export function Home() {
+  const [query, setQuery] = useRecoilState(contentState);
+  const categories = useRecoilValue(categoryState);
+  const [selected, setSelected] = useState(false)
   const { isLoading, data } = useQuery(["contents"], getContents);
-  console.log(data);
+  const { sort, setSort } = useState(true);
+  useEffect(() => {
+    if (data) {
+      setQuery(data);
+    }
+  }, [data]);
+const onSelect = () => {}
   return (
     <Container>
+      <CategoryDiv>
+        <CategoryBar>
+          <Categories>
+            {categories.map((category) => (
+              <Category key={category.name}>
+                <CategoryBtn >
+                  <img src={category.img} alt="null" />
+                </CategoryBtn>
+                <CategoryName>{category.name}</CategoryName>
+              </Category>
+            ))}
+          </Categories>
+          <Sort>
+            {sort ? (
+              <img src={timeSort} alt="null" />
+            ) : (
+              <img src={likeSort} alt="null" />
+            )}
+          </Sort>
+        </CategoryBar>
+      </CategoryDiv>
       <Contents>
         {data &&
-          data.map((content) => <Content content={content} key={content.id} />)}
+          query.map((content) => (
+            <Content content={content} key={content.id} />
+          ))}
       </Contents>
     </Container>
   );
