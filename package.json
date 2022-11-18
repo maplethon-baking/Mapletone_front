@@ -16,10 +16,6 @@
     "@types/react-query": "^1.2.9",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
-<<<<<<< HEAD
-=======
-    "bootstrap": "^5.2.2",
->>>>>>> 1e6f5993a545f0021e8aedbb32a5988f6429c0c9
     "framer-motion": "^7.6.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",

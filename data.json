@@ -2,7 +2,6 @@
   "contents": [
     {
       "id": 0,
-
       "category": "쿠키",
       "picture": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
       "likeCounts": 220,
@@ -69,19 +68,11 @@
   ],
   "recipes": [
     {
-<<<<<<< HEAD
       "id": 0,
       "img": "https://pixabay.com/get/g5e044fa56fb79f88de3e978f7da777067234dbf25df3a1c96e168a0c2159cf0752571ec8cb7a665f56d403f0ef1e31b11b7d96e14f1ccd8024223c72e21848c006c5e1aae6134f9949882dc39cb652f2_1920.jpg",
       "type": "쿠키",
       "taste": "당근",
       "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
-=======
-      "id" : 0,
-      "img":"https://cdn.pixabay.com/photo/2016/08/03/01/09/carrot-1565597_1280.jpg",
-      "type":"쿠키",
-      "taste":"당근",
-      "recipe":["밀가루(중력분)","초코칩","아몬드","우유","버터"]
->>>>>>> 1e6f5993a545f0021e8aedbb32a5988f6429c0c9
     },
     {
       "id": 1,
