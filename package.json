@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ramonak/react-progress-bar": "^5.0.3",
     "@tanstack/react-query": "^4.12.0",
     "@tanstack/react-query-devtools": "^4.16.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -15,8 +16,13 @@
     "@types/react-query": "^1.2.9",
     "@types/react-router-dom": "^5.3.3",
     "@types/styled-components": "^5.1.26",
+<<<<<<< HEAD
+=======
+    "bootstrap": "^5.2.2",
+>>>>>>> 1e6f5993a545f0021e8aedbb32a5988f6429c0c9
     "framer-motion": "^7.6.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.39.4",
     "react-router-dom": "^6.4.2",
