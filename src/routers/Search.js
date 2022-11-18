@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
-import { getContents } from "../api";
+import { getContents, getSearch } from "../api";
 
 const Container = styled.div``;
 
@@ -32,17 +32,40 @@ const ContentImg = styled.img`
 
 export function Search() {
   const { isLoading, data } = useQuery(["ContentImg"], getContents);
-  console.log(data);
+  const location = useLocation();
+  const keyword = new URLSearchParams(location.search).get("search");
+  const [searchParams] = useSearchParams();
+  const word = searchParams.get("search");
+  console.log(keyword, word);
+  const { data: searchData, isLoading: searchLoading } = useQuery(
+    ["search: " + word],
+    () =>
+      getSearch({
+        keyword: keyword,
+      })
+  );
+
   return (
     <Container>
-      <Contents>
-        {data &&
-          data.map((content) => (
-            <Content key={content.id}>
-              <ContentImg src={content.picture} />
-            </Content>
-          ))}
-      </Contents>
+      {keyword ? (
+        <Content>
+          {searchData &&
+            searchData.map((content) => (
+              <Content key={content.id}>
+                <ContentImg src={content.picture} />
+              </Content>
+            ))}
+        </Content>
+      ) : (
+        <Contents>
+          {data &&
+            data.map((content) => (
+              <Content key={content.id}>
+                <ContentImg src={content.picture} />
+              </Content>
+            ))}
+        </Contents>
+      )}
     </Container>
   );
 }
