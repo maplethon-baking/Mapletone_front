@@ -1,14 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { getContents } from "../api";
 import create_button from "../assets/create_button.png";
 import speech_bubble from "../assets/speech_bubble.png";
 
-import { SpeechDiv, SpeechText } from "./Recipe";
-
-const CreateButton = styled.img`
+const CreateButtonImg = styled.img`
   width: 50px;
-  margin-bottom: 100px;
 `;
 const Bubble = styled.img`
   width: 240px;
@@ -17,6 +15,17 @@ const Bubble = styled.img`
 const Container = styled.div`
   display: flex;
   justify-content: center;
+`;
+
+const SpeechDiv = styled.div`
+  margin-top: 30px;
+  margin-bottom: 10px;
+`;
+const SpeechText = styled.span`
+  position: absolute;
+  text-align: center;
+  transform: translate(6%, 50%);
+  color: white;
 `;
 
 const Contents = styled.div`
@@ -56,15 +65,26 @@ const ContentImg = styled.img`
   border-radius: 15px;
 `;
 
+const CreateButton = styled.button`
+  width: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+`;
+
 export function Boards() {
   const { isLoading, data } = useQuery(["ContentImg"], getContents);
+  const navigate = useNavigate();
   return (
     <Container>
       <Contents>
         {data &&
           data.map((content) => (
             <Content key={content.id}>
-              <ContentImg src={content.img} />
+              <ContentImg src={content.picture} />
             </Content>
           ))}
       </Contents>
@@ -73,7 +93,9 @@ export function Boards() {
           <SpeechText>나의 작품을 게시물로 올려보세요!</SpeechText>
           <Bubble src={speech_bubble} />
         </SpeechDiv>
-        <CreateButton src={create_button} />
+        <CreateButton type="button" onClick={() => navigate("/write")}>
+          <CreateButtonImg src={create_button} />
+        </CreateButton>
       </SpeechBox>
     </Container>
   );

@@ -20,6 +20,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Item = styled(Link)`
@@ -27,7 +28,7 @@ const Item = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10%;
+  padding: 0 10%;
 `;
 
 const Icon = styled.img`
@@ -39,7 +40,6 @@ export function Navbar() {
   const homeMatch = useMatch("/");
   const boardsMatch = useMatch("/boards");
   const recipeMatch = useMatch("/recipe");
-  console.log(homeMatch, boardsMatch, recipeMatch);
 
   return (
     <Nav>

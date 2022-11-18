@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import styled from "styled-components";
 import { getContents } from "../api";
-import { categoryState, contentState } from "../atom";
+import { menuState, menuSelector, contentState, categoryState } from "../atom";
 import { Content } from "../components/Content";
 import timeSort from "../assets/time_sort.png";
 import likeSort from "../assets/like_sort.png";
@@ -25,7 +25,8 @@ export const Contents = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 90px;
+  padding: 110px 0;
+  gap: 20px;
 `;
 
 const CategoryDiv = styled.div`
@@ -42,7 +43,7 @@ const CategoryDiv = styled.div`
 
 const CategoryBar = styled.div`
   border-radius: 10px;
-  width: 98%;
+  width: 100%;
   height: 65px;
   display: flex;
   justify-content: space-between;
@@ -93,8 +94,10 @@ const Sort = styled.div`
 
 export function Home() {
   const [query, setQuery] = useRecoilState(contentState);
-  const categories = useRecoilValue(categoryState);
-  const [selected, setSelected] = useState(false)
+  const post = useRecoilValue(menuSelector);
+  const [category, setCategory] = useRecoilState(categoryState);
+  const menu = useRecoilValue(menuState);
+  const [selected, setSelected] = useState("");
   const { isLoading, data } = useQuery(["contents"], getContents);
   const { sort, setSort } = useState(true);
   useEffect(() => {
@@ -102,18 +105,25 @@ export function Home() {
       setQuery(data);
     }
   }, [data]);
-const onSelect = () => {}
+
+  const onClick = (event) => {
+    const {
+      currentTarget: { name },
+    } = event;
+    setCategory(name);
+  };
+
   return (
     <Container>
       <CategoryDiv>
         <CategoryBar>
           <Categories>
-            {categories.map((category) => (
-              <Category key={category.name}>
-                <CategoryBtn >
-                  <img src={category.img} alt="null" />
+            {menu.map((item) => (
+              <Category key={item.name}>
+                <CategoryBtn onClick={onClick} name={item.name}>
+                  <img src={item.img} alt="null" />
                 </CategoryBtn>
-                <CategoryName>{category.name}</CategoryName>
+                <CategoryName>{item.name}</CategoryName>
               </Category>
             ))}
           </Categories>
@@ -128,9 +138,7 @@ const onSelect = () => {}
       </CategoryDiv>
       <Contents>
         {data &&
-          query.map((content) => (
-            <Content content={content} key={content.id} />
-          ))}
+          post.map((content) => <Content content={content} key={content.id} />)}
       </Contents>
     </Container>
   );

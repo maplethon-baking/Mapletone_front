@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 98%;
+const Container = styled(motion.div)`
+  width: 100%;
   height: 350px;
-  margin: 20px auto;
+  margin: 0 auto;
   border-radius: 10px;
   background-color: ${(props) => props.theme.content};
   box-shadow: 0px 4px 9px -4px rgba(0, 0, 0, 0.69);
