@@ -11,6 +11,7 @@ import { RecipeCreate } from "../components/RecipeCreate";
 export const CreateButton = styled.img`
   width: 50px;
   margin-bottom: 100px;
+  cursor: pointer;
 `
 export const SpeechBubble = styled.img`
   width: 220px;
