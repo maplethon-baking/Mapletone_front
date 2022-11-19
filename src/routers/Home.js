@@ -39,11 +39,12 @@ const CategoryDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7f0e6;
+  background-color: #fff;
   z-index: 10;
 `;
 
 const CategoryBar = styled.div`
+  max-width: 440px;
   border-radius: 10px;
   width: 100%;
   height: 65px;

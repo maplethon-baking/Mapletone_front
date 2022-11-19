@@ -43,7 +43,7 @@ const ContentImg = styled.img`
   object-fit: fill;
 `;
 
-const Overlay = styled(motion.div)`
+export const Overlay = styled(motion.div)`
   position: fixed;
   top: 0;
   width: 100%;
@@ -52,7 +52,7 @@ const Overlay = styled(motion.div)`
   opacity: 0;
 `;
 
-const Clicked = styled(motion.div)`
+export const Clicked = styled(motion.div)`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -86,6 +86,7 @@ export function Search() {
   const overlayClick = () => navigate(-1);
   const navigate = useNavigate();
   const onBoxClick = (id) => navigate(`${id}`);
+
   return (
     <Container>
       <AnimatePresence>
@@ -98,7 +99,7 @@ export function Search() {
                   onClick={() => onBoxClick(content.id)}
                   key={content.id}
                 >
-                  <ContentImg src={content.picture} />
+                  <ContentImg src={content.picture[0]} />
                 </ContentBox>
               ))}
           </Contents>
@@ -111,7 +112,7 @@ export function Search() {
                   onClick={() => onBoxClick(content.id)}
                   key={content.id}
                 >
-                  <ContentImg src={content.picture} />
+                  <ContentImg src={content.picture[0]} />
                 </ContentBox>
               ))}
           </Contents>

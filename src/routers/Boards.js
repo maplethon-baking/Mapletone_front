@@ -1,9 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { useMatch, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { getContents } from "../api";
 import create_button from "../assets/create_button.png";
 import speech_bubble from "../assets/speech_bubble.png";
+import { Content } from "../components/Content";
+import { Clicked, Overlay } from "./Search";
 
 import backImg from "../assets/background.svg";
 
@@ -23,15 +26,13 @@ const Container = styled.div`
   /* padding-top: 120px; */
 `;
 
-const SpeechDiv = styled.div`
-  margin-top: 30px;
-  margin-bottom: 10px;
-`;
+const SpeechDiv = styled.div``;
 const SpeechText = styled.span`
   position: absolute;
   text-align: center;
-  transform: translate(6%, 50%);
-  color: white;
+  transform: translate(10%, 60%);
+  color: ${(props) => props.theme.menutext};
+  font-size: 15px;
 `;
 
 const Contents = styled.div`
@@ -62,7 +63,7 @@ const SpeechBox = styled.div`
   align-items: center;
 `;
 
-const Content = styled.div``;
+const ContentDiv = styled(motion.div)``;
 
 const ContentImg = styled.img`
   width: 100%;
@@ -84,25 +85,50 @@ const CreateButton = styled.button`
 export function Boards() {
   const { isLoading, data } = useQuery(["ContentImg"], getContents);
   const navigate = useNavigate();
+  const contentMatch = useMatch("/boards/:id");
+  const clickedContent =
+    contentMatch?.params.id &&
+    data?.find((item) => item.id === +contentMatch.params.id);
+  const overlayClick = () => navigate("/boards");
+  const onBoxClick = (id) => navigate(`${id}`);
   return (
     <Container>
-      <Contents>
-        {data &&
-          data.map((content) => (
-            <Content key={content.id}>
-              <ContentImg src={content.picture} />
-            </Content>
-          ))}
-      </Contents>
-      <SpeechBox>
-        <SpeechDiv>
-          <SpeechText>나의 작품을 게시물로 올려보세요!</SpeechText>
-          <Bubble src={speech_bubble} />
-        </SpeechDiv>
-        <CreateButton type="button" onClick={() => navigate("/write")}>
-          <CreateButtonImg src={create_button} />
-        </CreateButton>
-      </SpeechBox>
+      <AnimatePresence>
+        <Contents>
+          {data &&
+            data.map((content) => (
+              <ContentDiv
+                layoutId={content.id + ""}
+                onClick={() => onBoxClick(content.id)}
+                key={content.id}
+              >
+                <ContentImg src={content.picture[0]} />
+              </ContentDiv>
+            ))}
+        </Contents>
+        <SpeechBox>
+          <SpeechDiv>
+            <SpeechText>나의 작품을 게시물로 올려보세요!</SpeechText>
+            <Bubble src={speech_bubble} />
+          </SpeechDiv>
+          <CreateButton type="button" onClick={() => navigate("/write")}>
+            <CreateButtonImg src={create_button} />
+          </CreateButton>
+        </SpeechBox>
+
+        {contentMatch ? (
+          <>
+            <Overlay
+              onClick={overlayClick}
+              exit={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            />
+            <Clicked layoutId={contentMatch.params.id}>
+              <Content content={clickedContent} />
+            </Clicked>
+          </>
+        ) : null}
+      </AnimatePresence>
     </Container>
   );
 }
