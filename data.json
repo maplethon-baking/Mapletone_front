@@ -3,7 +3,9 @@
     {
       "id": 0,
       "category": "쿠키",
-      "picture": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "picture": [
+        "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg"
+      ],
       "likeCounts": 220,
       "title": "초코칩쿠키",
       "content": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"
@@ -12,7 +14,10 @@
     {
       "id": 1,
       "category": "스콘",
-      "picture": "https://static.wtable.co.kr/image/production/service/recipe/1856/54c7cc6a-2db0-47a8-ae18-a48f0f434f7b.jpg",
+      "picture": [
+        "https://static.wtable.co.kr/image/production/service/recipe/1856/54c7cc6a-2db0-47a8-ae18-a48f0f434f7b.jpg",
+        "https://m.cj.co.kr/images/theKitchen/PHON/0000002441/0000010653/0000002441.jpg"
+      ],
       "likeCounts": 220,
       "title": "치즈스콘",
       "content": "스콘은 영국의 대표 요리로 베이킹소다나 파우더를 밀가루 반죽에 넣어 부풀린 빵이에요. 담백한 맛이 매력! "
@@ -20,7 +25,9 @@
     {
       "id": 2,
       "category": "케이크",
-      "picture": "https://recipe1.ezmember.co.kr/cache/recipe/2016/03/06/d636636fdc2e2f8337d666b8d3c8f95e1.jpg",
+      "picture": [
+        "https://recipe1.ezmember.co.kr/cache/recipe/2016/03/06/d636636fdc2e2f8337d666b8d3c8f95e1.jpg"
+      ],
       "likeCounts": 220,
       "title": "딸기 케이크",
       "content": "딸기를 듬뿍 넣어 만든 촉촉하고 상큼한 딸기 생크림 케이크~"
@@ -28,7 +35,9 @@
     {
       "id": 3,
       "category": "휘낭시에",
-      "picture": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "picture": [
+        "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg"
+      ],
       "likeCounts": 220,
       "title": "휘낭시에",
       "content": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"
@@ -36,7 +45,10 @@
     {
       "id": 4,
       "category": "스콘",
-      "picture": "https://static.wtable.co.kr/image/production/service/recipe/1856/54c7cc6a-2db0-47a8-ae18-a48f0f434f7b.jpg",
+      "picture": [
+        "https://static.wtable.co.kr/image/production/service/recipe/1856/54c7cc6a-2db0-47a8-ae18-a48f0f434f7b.jpg",
+        "https://m.cj.co.kr/images/theKitchen/PHON/0000002441/0000010653/0000002441.jpg"
+      ],
       "likeCounts": 220,
       "title": "치즈스콘",
       "content": "스콘은 영국의 대표 요리로 베이킹소다나 파우더를 밀가루 반죽에 넣어 부풀린 빵이에요. 담백한 맛이 매력! "
@@ -44,7 +56,9 @@
     {
       "id": 5,
       "category": "쿠키",
-      "picture": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "picture": [
+        "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg"
+      ],
       "likeCounts": 220,
       "title": "초코칩쿠키",
       "content": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"
@@ -52,7 +66,9 @@
     {
       "id": 6,
       "category": "쿠키",
-      "picture": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "picture": [
+        "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg"
+      ],
       "likeCounts": 220,
       "title": "초코칩쿠키",
       "content": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"
@@ -60,7 +76,9 @@
     {
       "id": 7,
       "category": "쿠키",
-      "picture": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
+      "picture": [
+        "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg"
+      ],
       "likeCounts": 220,
       "title": "초코칩쿠키",
       "content": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"

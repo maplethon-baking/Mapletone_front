@@ -42,6 +42,58 @@ footer, header, hgroup, main, menu, nav, section {
 body {
   line-height: 1;
 }
+.main-banner-dots {
+  top: -5px;
+  width: 100%;
+  list-style: none;
+  text-align: end;
+  position: absolute;
+  right: 15px;
+  padding: 0;
+}
+
+.main-banner-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  /*margin: 1px;*/
+  padding: 0;
+  cursor: pointer;
+}
+
+.main-banner-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: 0;
+  background: 0 0;
+}
+
+.main-banner-dots li button:before {
+  font-size: 2.7rem;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "•";
+  text-align: center;
+  opacity: 0.75;
+  color: #6d6968;
+}
+
+.main-banner-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: #ffffff;
+}
 menu, ol, ul {
   list-style: none;
 }
@@ -85,7 +137,6 @@ root.render(
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <App />
-        <ReactQueryDevtools initialIsOpen={false} />
       </ThemeProvider>
     </QueryClientProvider>
   </RecoilRoot>
