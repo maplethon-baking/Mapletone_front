@@ -103,6 +103,7 @@ export function Home() {
   const [selected, setSelected] = useState("");
   const { isLoading, data } = useQuery(["contents"], getContents);
   const { sort, setSort } = useState(true);
+  console.log(data);
   useEffect(() => {
     if (data) {
       setQuery(data);
