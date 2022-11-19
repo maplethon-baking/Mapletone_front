@@ -88,6 +88,7 @@ export function SelectCard({ count, setCount, num, setNum, check, setCheck, resu
     const [nextText, setNextText] = useState("다음");
     const [checkButton, setCheckButton] = useState(false);
     const next = () => {
+        setCheckButton(false);
         if (num < 3) {
             setCount(count += 35);
             setNum(++num);
