@@ -1,7 +1,7 @@
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "http://localhost:8000";
 
 export function getContents() {
-  return fetch(`${BASE_URL}/post`).then((response) => response.json());
+  return fetch(`${BASE_URL}/post/?format=json`).then((response) => response.json());
 }
 export function getRecipes() {
   return fetch(`${BASE_URL}/recipes`).then((response) => response.json());
