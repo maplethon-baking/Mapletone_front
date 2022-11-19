@@ -35,6 +35,18 @@ const Recipe = styled.div`
   border: solid;
 `;
 
+const FontDiv = styled.div`
+  display: grid;
+  padding: 30px;
+`;
+const TasteFont = styled.h2`
+  font-size: 30px;
+`;
+
+const TypeFont = styled.h1`
+  font-size: 35px;
+`;
+
 const Upload = styled.div``;
 
 const PhotoUpload = styled.div``;
@@ -44,6 +56,7 @@ const TextUpload = styled.div``;
 const Title = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
 `;
 
 const Index = styled.div`
@@ -56,7 +69,9 @@ const Index = styled.div`
   align-items: center;
 `;
 
-const TitleText = styled.span``;
+const TitleText = styled.span`
+  margin-left: 10px;
+`;
 
 const TextBox = styled.textarea``;
 
@@ -74,15 +89,17 @@ export function Write() {
       </PickRecipe>
       <Upload>
         <PhotoUpload>
-          <Index>1</Index>
-          <TitleText>사진을 선택하세요</TitleText>
+          <Title>
+            <Index>1</Index>
+            <TitleText>사진을 올려주세요.</TitleText>
+          </Title>
         </PhotoUpload>
         <TextUpload>
           <Title>
             <Index>2</Index>
-            <TitleText>글을 작성해주세요</TitleText>
-            <TextBox></TextBox>
+            <TitleText>글을 작성해주세요.</TitleText>
           </Title>
+          <TextBox></TextBox>
         </TextUpload>
       </Upload>
     </Container>
