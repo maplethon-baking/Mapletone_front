@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useMatch, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import logo from "../assets/logo.png";
 
 const HeaderBar = styled.header`
   z-index: 99;
@@ -20,7 +21,7 @@ const HeaderBar = styled.header`
   box-shadow: 0px 4px 9px -4px rgba(0, 0, 0, 0.69);
 `;
 
-const Logo = styled.div``;
+const Logo = styled.img``;
 
 const Search = styled(Link)`
   height: 36px;
@@ -107,7 +108,7 @@ export function Header() {
         </SearchBar>
       ) : (
         <HeaderBar>
-          <Logo>Logo</Logo>
+          <Logo src={logo} />
           <Search to="/search">
             <Icon
               fill="currentColor"

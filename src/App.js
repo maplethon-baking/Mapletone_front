@@ -4,6 +4,7 @@ import { Boards } from "./routers/Boards";
 import { Home } from "./routers/Home";
 import { Recipe } from "./routers/Recipe";
 import { Search } from "./routers/Search";
+import { Write } from "./routers/Write";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/boards/:id" element={<Boards />} />
         </Route>
         <Route path="/recipe" element={<Recipe />} />
+        <Route path="/write" element={<Write />} />
         <Route path="/search" element={<Search />}>
           <Route path="/search/:id" element={<Home />} />
         </Route>
