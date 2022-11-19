@@ -3,6 +3,17 @@ import cookie from "./assets/cookie.png";
 import cake from "./assets/cake.png";
 import scorn from "./assets/scorn.png";
 import financier from "./assets/financier.png";
+import { recoilPersist } from "recoil-persist";
+
+const { persistAtom } = recoilPersist({
+  storage: localStorage,
+});
+
+export const recipeResult = atom({
+  key: "result",
+  default: [],
+  effects_UNSTABLE: [persistAtom],
+});
 
 export const contentState = atom({
   key: "homeContent",

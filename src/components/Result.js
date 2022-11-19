@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import cake from "../assets/cake.png"
-import backImg from "../assets/background.svg"
+import cake from "../assets/cake.png";
+import backImg from "../assets/background.svg";
 import { useQuery } from "@tanstack/react-query";
 import { getResult } from "../api";
 import { getOrder } from "../api";
@@ -9,16 +9,15 @@ const Container = styled.div`
   max-width: 480px;
   margin: 0 auto;
   /* object-fit: cover; */
-  
 `;
 
 const ResultContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const ImgDiv = styled.img`
-    height: 200px;
+  height: 200px;
 `;
 
 const ResultDiv = styled.div`
@@ -26,8 +25,8 @@ const ResultDiv = styled.div`
     background-color: #FEF7F2;
 `;
 const FontDiv = styled.div`
-    display: grid;
-    padding: 30px;
+  display: grid;
+  padding: 30px;
 `;
 const TasteFont = styled.h2`
     font-size: 25px;
@@ -37,9 +36,9 @@ const TypeFont = styled.h1`
     font-size: 20px;
 `;
 const RecipeFont = styled.h3`
-    font-size: 13px;
-    font-weight: lighter;
-    margin-top: 30px;
+  font-size: 13px;
+  font-weight: lighter;
+  margin-top: 30px;
 `;
 
 const SelectDiv = styled.div`
@@ -158,5 +157,4 @@ export function Result() {
             </SelectDiv>
         </Container>
     );
-
 }

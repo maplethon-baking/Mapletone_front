@@ -21,7 +21,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  background:url(${backImg});
+  background: url(${backImg});
   background-size: cover;
   /* padding-top: 120px; */
 `;
