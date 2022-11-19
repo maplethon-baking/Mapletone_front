@@ -24,3 +24,6 @@ export function getResult() {
 export function getSearch({ keyword }) {
   return fetch(`${BASE_URL}/post/?search=${keyword}`);
 }
+export function getOrder(){
+  return fetch(`${BASE_URL}/order`).then((response) => response.json());
+}

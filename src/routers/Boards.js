@@ -51,7 +51,7 @@ const Contents = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-  padding-bottom: 220px;
+  padding-bottom: 400px;
 `;
 
 const SpeechBox = styled.div`

@@ -6,7 +6,7 @@ import arrow_back from "../assets/arrow_back_FILL0_wght400_GRAD0_opsz48.svg";
 const Card = styled.button`
     display: flex;
     align-items: center;
-    width: 400px;
+    width: 350px;
     height: 70px;
     border-radius: 6px;
     border: 1.5px solid rgba(151, 106, 81, 0.5);
@@ -50,6 +50,8 @@ const NextButton = styled.div`
     }
     color: white;
     cursor: pointer;
+    pointer-events: ${props => props.checkNone};
+    /* pointer-events: none; */
 `;
 
 const BackButton = styled.div`
@@ -84,6 +86,7 @@ export function SelectCard({ count, setCount, num, setNum, check, setCheck, resu
     const [topping, setTopping] = useState(new Set([]));
     const [color, setColor] = useState(null);
     const [nextText, setNextText] = useState("다음");
+    const [checkButton, setCheckButton] = useState(false);
     const next = () => {
         if (num < 3) {
             setCount(count += 35);
@@ -105,15 +108,17 @@ export function SelectCard({ count, setCount, num, setNum, check, setCheck, resu
         const type = e.target.value;
         const index = e.target.id;
         setColor(index);
-        //color === "gray" ? setColor("gray") : setColor("#BBBBBB");
         if (num === 1) {
             setCurrent([type]);
+            setCheckButton(true);
         }
         if (num === 2) {
             setTaste([type]);
+            setCheckButton(true);
         }
         if (num === 3) {
             setTopping([type]);
+            setCheckButton(true);
         }
     };
     const selectPage = () => {
@@ -149,12 +154,12 @@ export function SelectCard({ count, setCount, num, setNum, check, setCheck, resu
                     <>
                         <BackButton onClick={back}>이전</BackButton>
 
-                        <NextButton size="60px" onClick={next}>{nextText}</NextButton>
+                        <NextButton size="60px" onClick={next} checkNone={checkButton ? "" : "none"} >{nextText}</NextButton>
                     </>
                 ) : (
                     <>
                         <div></div>
-                        <NextButton size="60px" onClick={next}>{nextText}</NextButton>
+                        <NextButton size="60px" onClick={next} checkNone={checkButton ? "" : "none"} >{nextText}</NextButton>
                     </>)}
             </ButtonDiv>
         </>
