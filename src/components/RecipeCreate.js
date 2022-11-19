@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useState } from "react";
-import { SELECT, TASTE_TOPPING, TYPE } from "../data/select"
+import { SELECT } from "../data/select"
 import { SelectCard } from "./SelectCard";
 const Container = styled.div`
   padding-top: 49px;
@@ -19,7 +19,7 @@ const CreateDiv = styled.div`
 `
 
 const ProgressDiv = styled.div`
-    margin-top: 30px;
+    margin-top: 60px;
     margin-bottom: 60px;
     display: flex;
     justify-content: center;
@@ -39,6 +39,7 @@ const SelectDiv = styled.div`
     background-color: gray;
     border-radius: 15px 15px 0px 0px;
 `
+
 export function RecipeCreate() {
     const [count, setCount] = useState(0);
     const [num, setNum] = useState(1);
@@ -50,7 +51,7 @@ export function RecipeCreate() {
                 </ProgressDiv>
                 <TitieDiv>{SELECT[num]["title"]}</TitieDiv>
                 <SelectDiv>
-                    <SelectCard></SelectCard>
+                    <SelectCard count={count} setCount={setCount} num={num} setNum={setNum}></SelectCard>
                 </SelectDiv>
             </CreateDiv>
         </Container>
