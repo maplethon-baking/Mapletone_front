@@ -1,3 +1,5 @@
+import Slider from "react-slick";
+
 export function Sliders() {
   const settings = {
     dots: true,
