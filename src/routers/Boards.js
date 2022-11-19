@@ -84,7 +84,7 @@ export function Boards() {
         {data &&
           data.map((content) => (
             <Content key={content.id}>
-              <ContentImg src={content.picture} />
+              <ContentImg src={content.picture[0]} />
             </Content>
           ))}
       </Contents>

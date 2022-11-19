@@ -93,7 +93,7 @@ export function Search() {
                   onClick={() => onBoxClick(content.id)}
                   key={content.id}
                 >
-                  <ContentImg src={content.picture} />
+                  <ContentImg src={content.picture[0]} />
                 </ContentBox>
               ))}
           </Contents>
@@ -106,7 +106,7 @@ export function Search() {
                   onClick={() => onBoxClick(content.id)}
                   key={content.id}
                 >
-                  <ContentImg src={content.picture} />
+                  <ContentImg src={content.picture[0]} />
                 </ContentBox>
               ))}
           </Contents>

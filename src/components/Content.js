@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
+
 import { useNavigate } from "react-router-dom";
+import slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 
 const Container = styled(motion.div)`
   width: 100%;
   height: 350px;
+
   margin: 0 auto;
   border-radius: 10px;
   background-color: ${(props) => props.theme.content};
@@ -12,9 +17,14 @@ const Container = styled(motion.div)`
   overflow: hidden;
 `;
 
+const SliderDiv = styled.div`
+  width: 100%;
+  height: 230px;
+`;
+
 const Image = styled.img`
   width: 100%;
-  height: 67%;
+  height: 100%;
   object-fit: cover;
 `;
 
@@ -68,10 +78,71 @@ const Comment = styled.span`
   padding: 0 15px;
 `;
 
+const Slider = styled(slider)`
+  /* height: 200px; //슬라이드 컨테이너 영역
+  display: block;
+  .slick-list {
+    //슬라이드 스크린
+
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  .slick-slide div {
+    position: relative;
+
+    display: grid;
+    background: ${(props) => props.bgimg};
+  }
+
+  .slick-dots {
+    //슬라이드의 위치
+    margin-top: 18px;
+    bottom: 20px;
+    color: white;
+    button {
+      width: 1px;
+      height: 1px;
+      border-radius: 0.5;
+    }
+  }
+
+  .slick-track {
+    //이건 잘 모르겠음
+    width: 100%;
+  } */
+`;
+
 export function Content({ content }) {
+  // const customPaging = (i) => {
+  //   return <button style={{ display: "hidden" }}>{i + 1}</button>;
+  // };
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    // customPaging: customPaging,
+  };
   return (
     <Container>
-      <Image src={content.picture} />
+      <Slider {...settings}>
+        {content.picture.map((img, index) => (
+          <SliderDiv
+            key={img}
+            bgColor="black"
+            bgimg={`url(${img})`}
+            index={index}
+          >
+            <Image src={img} />
+          </SliderDiv>
+        ))}
+      </Slider>
+      {/* <Image src={content.picture} /> */}
       <InfoBox>
         <Like>
           <LikeIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

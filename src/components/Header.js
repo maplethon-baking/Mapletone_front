@@ -15,7 +15,7 @@ const HeaderBar = styled.header`
   background-color: ${(props) => props.theme.header};
   padding: 0 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 9px -4px rgba(0, 0, 0, 0.69);
 `;
@@ -23,15 +23,24 @@ const HeaderBar = styled.header`
 const Logo = styled.div``;
 
 const Search = styled(Link)`
-  height: 100%;
+  height: 36px;
+  width: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 20px;
+  border: solid 2px #dbb7a6;
+  border-radius: 8px;
 `;
 
 const Icon = styled.svg`
   width: 25px;
   height: 25px;
+`;
+const SearchIcon = styled(Icon)`
+  position: absolute;
+  right: 25px;
 `;
 
 const SearchBar = styled.form`
@@ -53,15 +62,9 @@ const SearchBar = styled.form`
   }
 `;
 
-const Cancel = styled.input`
-  position: absolute;
-  right: 5px;
-`;
-
 const Input = styled(motion.input)`
   transform-origin: right;
   padding: 5px 10px;
-  padding-left: 40px;
   width: 70%;
   height: 35px;
   border-radius: 10px;
@@ -89,7 +92,7 @@ export function Header() {
             placeholder="검색어를 입력하세요"
             initial={{ scaleX: 0 }}
           />
-          <motion.svg
+          <SearchIcon
             onClick={handleSubmit(onValid)}
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -100,7 +103,7 @@ export function Header() {
               d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
               clipRule="evenodd"
             ></path>
-          </motion.svg>
+          </SearchIcon>
         </SearchBar>
       ) : (
         <HeaderBar>
