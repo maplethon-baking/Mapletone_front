@@ -21,7 +21,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
 
-  background:url(${backImg});
+  background: url(${backImg});
   background-size: cover;
   /* padding-top: 120px; */
 `;
@@ -51,7 +51,7 @@ const Contents = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
-  padding-bottom: 220px;
+  padding-bottom: 400px;
 `;
 
 const SpeechBox = styled.div`
