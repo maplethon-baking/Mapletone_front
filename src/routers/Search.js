@@ -11,7 +11,12 @@ import styled from "styled-components";
 import { getContents, getSearch } from "../api";
 import { Content } from "../components/Content";
 
-const Container = styled.div``;
+import backImg from "../assets/background.svg";
+const Container = styled.div`
+
+background:url(${backImg});
+  background-size: cover;
+`;
 
 const Contents = styled.div`
   padding: 100px 20px;

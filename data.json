@@ -10,7 +10,6 @@
       "title": "초코칩쿠키",
       "content": "여기 있는 초코칩 쿠키 레시피 대로 만들어 봤어요!! 연말분위기 내기에 딱이네요~~~~~"
     },
-
     {
       "id": 1,
       "category": "스콘",
@@ -90,28 +89,134 @@
       "img": "https://cdn.pixabay.com/photo/2016/08/03/01/09/carrot-1565597_1280.jpg",
       "type": "쿠키",
       "taste": "당근",
-      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
+      "recipe": [
+        "밀가루(중력분)",
+        "초코칩",
+        "아몬드",
+        "우유",
+        "버터"
+      ]
     },
     {
       "id": 1,
       "img": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
       "type": "쿠키",
       "taste": "초코",
-      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
+      "recipe": [
+        "밀가루(중력분)",
+        "초코칩",
+        "아몬드",
+        "우유",
+        "버터"
+      ]
     },
     {
       "id": 2,
       "img": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
       "type": "쿠키",
       "taste": "초코",
-      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
+      "recipe": [
+        "밀가루(중력분)",
+        "초코칩",
+        "아몬드",
+        "우유",
+        "버터"
+      ]
     },
     {
       "id": 3,
       "img": "https://simplelivingrecipes.com/wp-content/uploads/2022/03/fudgy-chocolate-cookies-with-cocoa-powder-s.jpg",
       "type": "쿠키",
       "taste": "초코",
-      "recipe": ["밀가루(중력분)", "초코칩", "아몬드", "우유", "버터"]
+      "recipe": [
+        "밀가루(중력분)",
+        "초코칩",
+        "아몬드",
+        "우유",
+        "버터"
+      ]
+    }
+  ],
+  "result": [
+    {
+      "data": [
+        "휘낭시에",
+        "얼그레이",
+        "견과류"
+      ],
+      "id": 1
+    },
+    {
+      "data": [
+        "휘낭시에",
+        "솔티드 카라멜",
+        "초코"
+      ],
+      "id": 2
+    },
+    {
+      "data": [
+        "휘낭시에",
+        "얼그레이",
+        "과일"
+      ],
+      "id": 3
+    },
+    {
+      "data": [
+        "휘낭시에",
+        "얼그레이",
+        "과일"
+      ],
+      "id": 4
+    },
+    {
+      "data": [
+        "휘낭시에",
+        "얼그레이",
+        "과일"
+      ],
+      "id": 5
+    },
+    {
+      "data": [
+        "휘낭시에",
+        "얼그레이",
+        "견과류"
+      ],
+      "id": 6
+    },
+    {
+      "data": [
+        "케이크",
+        "버터",
+        "과일"
+      ],
+      "id": 7
+    },
+    {
+      "data": [
+        "케이크",
+        "버터",
+        "과일"
+      ],
+      "id": 8
+    },
+    {
+      "data": [
+        "휘낭시에",
+        "솔티드 카라멜",
+        "과일"
+      ],
+      "id": 9
+    },
+    {
+      "data": [
+        "휘낭시에",
+        "솔티드 카라멜",
+        "과일"
+      ],
+      "id": 10
     }
   ]
 }
