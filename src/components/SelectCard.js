@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { SELECT } from "../data/select"
-import arrow_back from "../assets/arrow_back_FILL0_wght400_GRAD0_opsz48.svg"
+import { SELECT } from "../data/select";
+import arrow_back from "../assets/arrow_back_FILL0_wght400_GRAD0_opsz48.svg";
+
 const Card = styled.button`
     display: flex;
     align-items: center;
     width: 400px;
-    height: 60px;
+    height: 70px;
     border-radius: 6px;
-    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border: 1.5px solid rgba(151, 106, 81, 0.5);
     :hover{
-    background: #BBBBBB;
-    box-shadow: 0 0 10px 0 rgba(107, 83, 83,.15),
+        background-color: rgba(151, 106, 81, 0.4);
+        box-shadow: 0 0 10px 0 rgba(107, 83, 83,.15),
                 0 0 10px 0 rgba(107, 83, 83,.15),
                 0 0 10px 0 rgba(107, 83, 83,.15),
                 0 0 10px 0 rgba(107, 83, 83,.15);
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
      transition: all ease 0.7s 0s;
     }
-    background-color: gray;
+    color: #976A51;
+    background: rgba(254, 247, 242, 0.2);
     &.active {
-        background-color: #BBBBBB;
+        background-color: rgba(151, 106, 81, 0.4);
     }
+    cursor: pointer;
 `;
 const ButtonDiv = styled.div`
     display: flex;
@@ -35,8 +38,9 @@ const NextButton = styled.div`
     height: 40px;
     border: 1.5px solid rgba(255, 255, 255, 0.4);
     border-radius: 6px;
+    background: rgba(151, 106, 81, 0.2);
     :hover{
-    background: #BBBBBB;
+    background: #976A51;    
     box-shadow: 0 0 10px 0 rgba(107, 83, 83,.15),
                 0 0 10px 0 rgba(107, 83, 83,.15),
                 0 0 10px 0 rgba(107, 83, 83,.15),
@@ -44,6 +48,7 @@ const NextButton = styled.div`
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
      transition: all ease 0.7s 0s;
     }
+    color: white;
     cursor: pointer;
 `;
 
@@ -51,12 +56,13 @@ const BackButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
+    width: 60px;
     height: 40px;
     border: 1.5px solid rgba(255, 255, 255, 0.4);
     border-radius: 6px;
+    background: rgba(151, 106, 81, 0.2);
     :hover{
-    background: #BBBBBB;
+    background: #976A51;  
     box-shadow: 0 0 10px 0 rgba(107, 83, 83,.15),
                 0 0 10px 0 rgba(107, 83, 83,.15),
                 0 0 10px 0 rgba(107, 83, 83,.15),
@@ -64,6 +70,7 @@ const BackButton = styled.div`
      -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
      transition: all ease 0.7s 0s;
     }
+    color: white;
     cursor: pointer;
 `
 const BackImg = styled.img`
@@ -71,26 +78,27 @@ const BackImg = styled.img`
     height: 24px;
 `
 
-export function SelectCard({ count, setCount, num, setNum }) {
+export function SelectCard({ count, setCount, num, setNum, check, setCheck, resulutRecipe, setResulutRecipe }) {
     const [current, setCurrent] = useState([]);
     const [taste, setTaste] = useState([]);
     const [topping, setTopping] = useState(new Set([]));
-    const [test, setTest] = useState([]);
-    const [color,setColor] = useState(null);
+    const [color, setColor] = useState(null);
+    const [nextText, setNextText] = useState("다음");
     const next = () => {
         if (num < 3) {
             setCount(count += 35);
             setNum(++num);
         }
         else {
-            setTest([...test, current, taste, topping]);
+            setResulutRecipe([...resulutRecipe, ...current, ...taste, ...topping]);
+            setCheck(true);
         }
     };
     const back = () => {
         if (num > 1) {
             setCount(count -= 35);
             setNum(--num);
-            test.pop();
+            resulutRecipe.pop();
         }
     };
     const currentProgress = (e) => {
@@ -103,27 +111,34 @@ export function SelectCard({ count, setCount, num, setNum }) {
         }
         if (num === 2) {
             setTaste([type]);
-            topping.clear();
         }
         if (num === 3) {
-            setTopping(new Set([...topping, type]));
+            setTopping([type]);
         }
     };
     const selectPage = () => {
         if (num === 1) {
-            return SELECT[num]["type"].map((text,index) => {
-                return <Card className={ index ==  color ? " active": ""} onClick={(e)=>{currentProgress(e)}} value={text} id={index}>{text}</Card>;
+            return SELECT[num]["type"].map((text, index) => {
+                return <Card className={index == color ? " active" : ""} onClick={(e) => { currentProgress(e) }} value={text} id={index}>{text}</Card>;
             });
         }
         else {
-            return SELECT[num][`${current}`].map((text,index) => {
-                return <Card className={ index ==  color ? " active": ""} color={color} onClick={(e)=>{currentProgress(e)}} value={text} id={index}>{text}</Card>;
+            return SELECT[num][`${current}`].map((text, index) => {
+                return <Card className={index == color ? " active" : ""} color={color} onClick={(e) => { currentProgress(e) }} value={text} id={index}>{text}</Card>;
             });
         }
     };
-    useEffect(()=>{
+    useEffect(() => {
         setColor(null);
-    },[num])
+    }, [num])
+    useEffect(() => {
+        if (num === 3) {
+            setNextText("완료");
+        }
+        else {
+            setNextText("다음");
+        }
+    }, [num])
     return (
         <>
             {
@@ -132,14 +147,15 @@ export function SelectCard({ count, setCount, num, setNum }) {
             <ButtonDiv>
                 {num > 1 ? (
                     <>
-                        <BackButton onClick={back}>
-                            <BackImg src={arrow_back}></BackImg>
-                        </BackButton>
+                        <BackButton onClick={back}>이전</BackButton>
 
-                        <NextButton size="85%" onClick={next}>다음으로 넘어가기</NextButton>
+                        <NextButton size="60px" onClick={next}>{nextText}</NextButton>
                     </>
                 ) : (
-                    <NextButton size="100%" onClick={next}>다음으로 넘어가기</NextButton>)}
+                    <>
+                        <div></div>
+                        <NextButton size="60px" onClick={next}>{nextText}</NextButton>
+                    </>)}
             </ButtonDiv>
         </>
     );

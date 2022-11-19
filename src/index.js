@@ -85,7 +85,6 @@ root.render(
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <App />
-        <ReactQueryDevtools initialIsOpen={false} />
       </ThemeProvider>
     </QueryClientProvider>
   </RecoilRoot>

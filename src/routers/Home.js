@@ -7,7 +7,7 @@ import { menuState, menuSelector, contentState, categoryState } from "../atom";
 import { Content } from "../components/Content";
 import timeSort from "../assets/time_sort.png";
 import likeSort from "../assets/like_sort.png";
-
+import backImg from "../assets/background.svg";
 export const Container = styled.div`
   padding: 0px 20px;
   padding-top: 49px;
@@ -17,6 +17,8 @@ export const Container = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+  background:url(${backImg});
+  background-size: cover;
 `;
 
 export const Contents = styled.div`

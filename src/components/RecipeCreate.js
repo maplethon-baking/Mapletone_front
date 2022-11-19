@@ -1,14 +1,19 @@
 import styled from "styled-components";
 import ProgressBar from "@ramonak/react-progress-bar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SELECT } from "../data/select"
 import { SelectCard } from "./SelectCard";
+import { Result } from "./Result";
+import { postRecipes } from "../api";
+import { useMutation } from "@tanstack/react-query";
+import backImg from "../assets/background.svg"
 const Container = styled.div`
-  padding-top: 49px;
+  padding-top: 90px;
   max-width: 480px;
   margin: 0 auto;
-  background-color: black;
-
+  background:url(${backImg});
+  background-size: cover;
+  /* object-fit: cover; */
 `;
 
 const CreateDiv = styled.div`
@@ -28,32 +33,44 @@ const TitieDiv = styled.div`
     display: grid;
     justify-content: center;
     font-size: 25px;
-    color: white;
-    margin-bottom: 190px;
+    color: #976A51;
+    margin-bottom: 100px;
+    
 `
 const SelectDiv = styled.div`
     display: grid;
     justify-content: center;
     padding: 40px;
-    height: 400px;
-    background-color: gray;
+    height: 460px;
+    background: #F2E5DE;
     border-radius: 15px 15px 0px 0px;
 `
 
 export function RecipeCreate() {
     const [count, setCount] = useState(0);
     const [num, setNum] = useState(1);
+    const [check, setCheck] = useState(false);
+    const [resulutRecipe, setResulutRecipe] = useState([]);
+    const { mutate, isLoading, isError, error, isSuccess } = useMutation(() => postRecipes(resulutRecipe));
+    useEffect(() => {
+        if (resulutRecipe.length > 0) {
+            mutate();
+        }
+    }, [resulutRecipe])
     return (
-        <Container>
-            <CreateDiv>
-                <ProgressDiv>
-                    <ProgressBar labelAlignment="center" labelClassName="label" completed={count} height="15px" width="200px" bgColor="#C5C5C5" baseBgColor="#787878" borderRadius="10px" animateOnRender={true} />
-                </ProgressDiv>
-                <TitieDiv>{SELECT[num]["title"]}</TitieDiv>
-                <SelectDiv>
-                    <SelectCard count={count} setCount={setCount} num={num} setNum={setNum}></SelectCard>
-                </SelectDiv>
-            </CreateDiv>
-        </Container>
+        <>
+            {check ? (<Result resulutRecipe={resulutRecipe}></Result>) : (
+                <Container>
+                    <CreateDiv>
+                        <ProgressDiv>
+                            <ProgressBar labelAlignment="center" labelClassName="label" completed={count} height="10px" width="200px" bgColor="#D7BCAE" baseBgColor="#FEF7F2" borderRadius="10px" animateOnRender={true} />
+                        </ProgressDiv>
+                        <TitieDiv>{SELECT[num]["title"]}</TitieDiv>
+                        <SelectDiv>
+                            <SelectCard count={count} setCount={setCount} num={num} setNum={setNum} check={check} setCheck={setCheck} resulutRecipe={resulutRecipe} setResulutRecipe={setResulutRecipe}></SelectCard>
+                        </SelectDiv>
+                    </CreateDiv>
+                </Container>)}
+        </>
     );
 }

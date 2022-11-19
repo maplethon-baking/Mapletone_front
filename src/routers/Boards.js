@@ -5,6 +5,8 @@ import { getContents } from "../api";
 import create_button from "../assets/create_button.png";
 import speech_bubble from "../assets/speech_bubble.png";
 
+import backImg from "../assets/background.svg";
+
 const CreateButtonImg = styled.img`
   width: 50px;
 `;
@@ -15,6 +17,10 @@ const Bubble = styled.img`
 const Container = styled.div`
   display: flex;
   justify-content: center;
+
+  background:url(${backImg});
+  background-size: cover;
+  /* padding-top: 120px; */
 `;
 
 const SpeechDiv = styled.div`
@@ -31,20 +37,20 @@ const SpeechText = styled.span`
 const Contents = styled.div`
   display: grid;
   padding: 100px 20px;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: minmax(100px, auto);
   column-gap: 20px;
   row-gap: 20px;
   width: 100%;
-  padding: 0px 20px;
-  padding-top: 70px;
+  /* padding: 0px 20px;
+  padding-top: 70px; */
   max-width: 480px;
   margin: 0 auto;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
+  padding-bottom: 220px;
 `;
 
 const SpeechBox = styled.div`
