@@ -11,15 +11,16 @@ const Nav = styled.nav`
   z-index: 99;
   position: fixed;
   bottom: 0;
-  height: 49px;
+  height: 60px;
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  background-color: #c0c0c0;
-
+  background-color: ${(props) => props.theme.nav};
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Item = styled(Link)`
@@ -27,7 +28,7 @@ const Item = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10%;
+  padding: 0 10%;
 `;
 
 const Icon = styled.img`
@@ -39,7 +40,6 @@ export function Navbar() {
   const homeMatch = useMatch("/");
   const boardsMatch = useMatch("/boards");
   const recipeMatch = useMatch("/recipe");
-  console.log(homeMatch, boardsMatch, recipeMatch);
 
   return (
     <Nav>

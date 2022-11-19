@@ -1,10 +1,11 @@
+const BASE_URL = "http://localhost:4000";
+
 export function getContents() {
-  return fetch("http://localhost:4000/contents").then((response) =>
-    response.json()
-  );
+  return fetch(`${BASE_URL}/post`).then((response) => response.json());
 }
 export function getRecipes() {
-  return fetch("http://localhost:4000/recipes").then((response) =>
-    response.json()
-  );
+  return fetch(`${BASE_URL}/recipe`).then((response) => response.json());
+}
+export function getSearch({ keyword }) {
+  return fetch(`${BASE_URL}/post/?search=${keyword}`);
 }

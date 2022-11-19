@@ -1,20 +1,25 @@
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 300px;
-  height: 420px;
-  margin: 20px auto;
+const Container = styled(motion.div)`
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
   border-radius: 10px;
-  background-color: #c0c0c0;
+  background-color: ${(props) => props.theme.content};
+  box-shadow: 0px 4px 9px -4px rgba(0, 0, 0, 0.69);
+  overflow: hidden;
 `;
 
 const Image = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: 67%;
+  object-fit: cover;
 `;
 
 const InfoBox = styled.div`
-  width: 300px;
+  width: 100%;
   height: 120px;
   display: flex;
   flex-direction: column;
@@ -44,6 +49,7 @@ const LikeCounts = styled.span`
 `;
 
 const Text = styled.div`
+  width: 100%;
   height: 90px;
   display: flex;
   flex-direction: column;
@@ -51,7 +57,7 @@ const Text = styled.div`
 
 const Topic = styled.span`
   padding: 0 15px;
-  width: 300px;
+  width: 100%;
   height: 20px;
   font-size: 14px;
   font-weight: 600;
@@ -65,7 +71,7 @@ const Comment = styled.span`
 export function Content({ content }) {
   return (
     <Container>
-      <Image src={content.img} />
+      <Image src={content.picture} />
       <InfoBox>
         <Like>
           <LikeIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -74,8 +80,8 @@ export function Content({ content }) {
           <LikeCounts>{content.likeCounts}</LikeCounts>
         </Like>
         <Text>
-          <Topic>{content.topic}</Topic>
-          <Comment>{content.comments}</Comment>
+          <Topic>{content.title}</Topic>
+          <Comment>{content.content}</Comment>
         </Text>
       </InfoBox>
     </Container>
