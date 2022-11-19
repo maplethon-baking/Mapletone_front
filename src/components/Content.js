@@ -9,7 +9,6 @@ import styled from "styled-components";
 const Container = styled(motion.div)`
   width: 100%;
   height: 350px;
-
   margin: 0 auto;
   border-radius: 10px;
   background-color: ${(props) => props.theme.content};

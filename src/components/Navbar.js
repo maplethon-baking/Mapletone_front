@@ -1,17 +1,15 @@
 import { Link, useMatch } from "react-router-dom";
 import styled from "styled-components";
-import Ho from "../assets/home_outline.svg";
-import Hs from "../assets/home_solid.svg";
-import Co from "../assets/cook_outline.svg";
-import Cs from "../assets/cook_solid.svg";
-import Po from "../assets/photo_outline.svg";
-import Ps from "../assets/photo_solid.svg";
+import home from "../assets/home.svg";
+import cook from "../assets/cook.svg";
+import board from "../assets/board.svg";
+import { motion } from "framer-motion";
 
 const Nav = styled.nav`
   z-index: 99;
   position: fixed;
   bottom: 0;
-  height: 60px;
+  height: 65px;
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
@@ -27,13 +25,30 @@ const Item = styled(Link)`
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding: 0 10%;
+  padding-bottom: 7px;
 `;
 
 const Icon = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 41px;
+  height: 41px;
+`;
+
+const Circle = styled(motion.span)`
+  /* position: absolute;
+  width: 50px;
+  height: 50px;
+
+  background-color: rgba(80, 47, 29, 0.4);
+  margin: 0 auto;
+  border-radius: 50%; */
+  position: absolute;
+  width: 50px;
+  height: 4px;
+  background-color: rgba(80, 47, 29, 0.6);
+  top: 3px;
+  margin: 0 auto;
 `;
 
 export function Navbar() {
@@ -44,13 +59,16 @@ export function Navbar() {
   return (
     <Nav>
       <Item to="/">
-        <Icon src={homeMatch ? Hs : Ho} />
+        <Icon src={home} />
+        {homeMatch && <Circle layoutId="circle" />}
       </Item>
       <Item to="/recipe">
-        <Icon src={recipeMatch ? Cs : Co} />
+        <Icon src={cook} />
+        {recipeMatch && <Circle layoutId="circle" />}
       </Item>
       <Item to="/boards">
-        <Icon src={boardsMatch ? Ps : Po} />
+        <Icon src={board} />
+        {boardsMatch && <Circle layoutId="circle" />}
       </Item>
     </Nav>
   );
